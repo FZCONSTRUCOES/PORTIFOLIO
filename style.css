@@ -353,7 +353,7 @@ p {
   border: 1px solid var(--borda);
   border-radius: 14px;
   text-align: center;
-  padding: 22px 18px;
+  padding: 24px;
   font-weight: bold;
   color: var(--preto);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
@@ -369,53 +369,29 @@ p {
 
 .parceiro-logo {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-}
-
-.logo-parceiro-area {
-  width: 100%;
-  height: 82px;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .logo-parceiro {
-  max-width: 170px;
-  max-height: 72px;
+  max-width: 210px;
+  max-height: 90px;
   width: auto;
   height: auto;
   object-fit: contain;
   filter: grayscale(100%);
-  opacity: 0.92;
+  opacity: 0.95;
   transition: 0.3s;
-}
-
-.parceiro-logo span {
-  min-height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--grafite);
-  font-size: 14px;
-  line-height: 1.25;
 }
 
 .parceiro-logo:hover .logo-parceiro {
   filter: grayscale(0%);
   opacity: 1;
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
-/* Quando a imagem não carrega */
+/* Quando a imagem não carrega, não aparece texto quebrado */
 .logo-parceiro.erro-imagem {
-  display: none;
-}
-
-.logo-parceiro-area.sem-imagem {
   display: none;
 }
 
@@ -614,6 +590,11 @@ p {
   .equipe-grid,
   .portfolio-grid {
     grid-template-columns: 1fr;
+  }
+
+  .logo-parceiro {
+    max-width: 190px;
+    max-height: 80px;
   }
 
   .secao {
