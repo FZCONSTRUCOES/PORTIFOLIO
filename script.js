@@ -17,11 +17,12 @@ linksMenu.forEach((link) => {
   });
 });
 
-/* Esconde imagem quebrada dos parceiros */
+/* Esconde imagem quebrada dos parceiros para não aparecer texto */
 const logosParceiros = document.querySelectorAll(".logo-parceiro");
 
 logosParceiros.forEach((logo) => {
   logo.addEventListener("error", () => {
     logo.classList.add("erro-imagem");
+    logo.removeAttribute("alt");
   });
 });
