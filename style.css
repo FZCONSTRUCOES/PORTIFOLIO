@@ -144,7 +144,6 @@ img {
   background-size: contain;
   background-position: center;
   opacity: 0.14;
-  filter: grayscale(100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -308,7 +307,6 @@ p {
   font-size: 34px;
   display: inline-block;
   margin-bottom: 14px;
-  filter: grayscale(100%);
 }
 
 .card h3 {
@@ -352,7 +350,6 @@ p {
   background: linear-gradient(135deg, #ffffff, #f3f4f6);
   border: 1px solid var(--borda);
   border-radius: 14px;
-  text-align: center;
   padding: 24px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
   transition: 0.3s;
@@ -377,17 +374,12 @@ p {
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.95;
+  opacity: 1;
   transition: 0.3s;
-  font-size: 0;
-  color: transparent;
 }
 
 .parceiro-logo:hover .logo-parceiro {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 /* Se a imagem não existir, fica invisível e não mostra texto */
