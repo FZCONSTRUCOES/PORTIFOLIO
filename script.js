@@ -11,6 +11,8 @@ const linksMenu = document.querySelectorAll(".menu a");
 
 linksMenu.forEach((link) => {
   link.addEventListener("click", () => {
-    menu.classList.remove("ativo");
+    if (menu) {
+      menu.classList.remove("ativo");
+    }
   });
 });
