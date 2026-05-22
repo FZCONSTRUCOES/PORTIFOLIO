@@ -16,3 +16,17 @@ linksMenu.forEach((link) => {
     }
   });
 });
+
+/* Esconde imagem quebrada dos parceiros para não aparecer texto duplicado */
+const logosParceiros = document.querySelectorAll(".logo-parceiro");
+
+logosParceiros.forEach((logo) => {
+  logo.addEventListener("error", () => {
+    logo.classList.add("erro-imagem");
+
+    const areaLogo = logo.closest(".logo-parceiro-area");
+    if (areaLogo) {
+      areaLogo.classList.add("sem-imagem");
+    }
+  });
+});
