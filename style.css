@@ -354,8 +354,6 @@ p {
   border-radius: 14px;
   text-align: center;
   padding: 24px;
-  font-weight: bold;
-  color: var(--preto);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
   transition: 0.3s;
   overflow: hidden;
@@ -374,14 +372,16 @@ p {
 }
 
 .logo-parceiro {
-  max-width: 210px;
-  max-height: 90px;
+  max-width: 230px;
+  max-height: 95px;
   width: auto;
   height: auto;
   object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.95;
   transition: 0.3s;
+  font-size: 0;
+  color: transparent;
 }
 
 .parceiro-logo:hover .logo-parceiro {
@@ -390,7 +390,7 @@ p {
   transform: scale(1.05);
 }
 
-/* Quando a imagem não carrega, não aparece texto quebrado */
+/* Se a imagem não existir, fica invisível e não mostra texto */
 .logo-parceiro.erro-imagem {
   display: none;
 }
@@ -593,8 +593,8 @@ p {
   }
 
   .logo-parceiro {
-    max-width: 190px;
-    max-height: 80px;
+    max-width: 210px;
+    max-height: 85px;
   }
 
   .secao {
