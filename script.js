@@ -26,3 +26,46 @@ logosParceiros.forEach((logo) => {
     logo.removeAttribute("alt");
   });
 });
+
+/* Galeria de obras com ampliação */
+const obraCards = document.querySelectorAll(".obra-card img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImagem = document.getElementById("lightboxImagem");
+const lightboxFechar = document.getElementById("lightboxFechar");
+
+obraCards.forEach((imagem) => {
+  imagem.addEventListener("click", () => {
+    if (!lightbox || !lightboxImagem) return;
+
+    lightboxImagem.src = imagem.src;
+    lightboxImagem.alt = imagem.alt || "Imagem ampliada da obra";
+    lightbox.classList.add("ativo");
+    document.body.classList.add("sem-scroll");
+  });
+});
+
+function fecharLightbox() {
+  if (!lightbox || !lightboxImagem) return;
+
+  lightbox.classList.remove("ativo");
+  document.body.classList.remove("sem-scroll");
+  lightboxImagem.src = "";
+}
+
+if (lightboxFechar) {
+  lightboxFechar.addEventListener("click", fecharLightbox);
+}
+
+if (lightbox) {
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      fecharLightbox();
+    }
+  });
+}
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    fecharLightbox();
+  }
+});
