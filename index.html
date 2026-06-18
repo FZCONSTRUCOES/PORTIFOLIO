@@ -2,24 +2,43 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>FZ Construções LTDA</title>
 
-  <meta name="description" content="FZ Construções LTDA - Reformas, manutenção predial e obras civis com qualidade, segurança e responsabilidade técnica.">
+  <meta
+    name="description"
+    content="FZ Construções LTDA - Reformas, manutenção predial, obras civis e serviços técnicos."
+  >
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <header class="topo">
     <div class="container nav-container">
 
       <a href="#inicio" class="logo">
-        <img src="assets/logo-fz.png" alt="FZ Construções LTDA" class="logo-img">
+        <img
+          src="assets/logo-fz.png"
+          alt="FZ Construções LTDA"
+          class="logo-img"
+        >
       </a>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
         ☰
       </button>
 
@@ -39,183 +58,269 @@
 
   <main>
 
+    <!-- INÍCIO -->
+
     <section id="inicio" class="hero">
       <div class="hero-marca-fundo" aria-hidden="true"></div>
 
       <div class="container hero-content">
 
         <div class="hero-texto">
+
           <p class="tag">FZ Construções LTDA</p>
 
-          <h1>Construindo soluções com qualidade, compromisso e responsabilidade técnica.</h1>
+          <h1>
+            Construindo soluções com qualidade, compromisso e
+            responsabilidade técnica.
+          </h1>
 
           <p>
-            Atuamos em reformas, manutenção predial, obras civis e serviços técnicos,
-            atendendo empresas, instituições e contratos públicos e privados.
+            Atuamos em reformas, manutenção predial, obras civis e serviços
+            técnicos, atendendo empresas, instituições e contratos públicos
+            e privados.
           </p>
 
           <div class="hero-botoes">
-            <a href="#contato" class="btn btn-principal">Solicitar orçamento</a>
-            <a href="#servicos" class="btn btn-secundario">Ver serviços</a>
+            <a href="#contato" class="btn btn-principal">
+              Solicitar orçamento
+            </a>
+
+            <a href="#servicos" class="btn btn-secundario">
+              Ver serviços
+            </a>
           </div>
+
         </div>
 
       </div>
     </section>
+
+    <!-- SOBRE -->
 
     <section id="sobre" class="secao">
       <div class="container grid-2">
 
         <div>
           <p class="subtitulo">Sobre a empresa</p>
+
           <h2>FZ Construções LTDA</h2>
 
           <p>
-            A FZ Construções LTDA atua no segmento de obras civis, reformas e manutenção
-            predial, oferecendo soluções completas para empresas, órgãos públicos,
-            instituições e ambientes corporativos.
+            A FZ Construções LTDA atua no segmento de obras civis, reformas
+            e manutenção predial, oferecendo soluções completas para empresas,
+            órgãos públicos, instituições e ambientes corporativos.
           </p>
 
           <p>
             Nosso compromisso é entregar serviços com organização, segurança,
-            acompanhamento técnico e responsabilidade em cada etapa da execução.
+            acompanhamento técnico e responsabilidade em cada etapa da
+            execução.
           </p>
         </div>
 
         <div class="box-destaque">
           <h3>Nosso compromisso</h3>
+
           <p>
             Trabalhamos com foco em qualidade, cumprimento de prazos,
-            documentação adequada e atendimento às necessidades de cada contrato.
+            documentação adequada e atendimento às necessidades de cada
+            contrato.
           </p>
         </div>
 
       </div>
     </section>
 
+    <!-- SERVIÇOS -->
+
     <section id="servicos" class="secao secao-cinza">
       <div class="container">
 
         <p class="subtitulo centralizado">O que fazemos</p>
+
         <h2 class="centralizado">Nossos serviços</h2>
 
         <div class="cards">
 
-          <div class="card">
-            <span class="icone">🏗️</span>
+          <article class="card">
+            <span class="icone" aria-hidden="true">🏗️</span>
             <h3>Reformas prediais</h3>
-            <p>Reformas em ambientes comerciais, institucionais e administrativos.</p>
-          </div>
+            <p>
+              Reformas em ambientes comerciais, institucionais e
+              administrativos.
+            </p>
+          </article>
 
-          <div class="card">
-            <span class="icone">🛠️</span>
+          <article class="card">
+            <span class="icone" aria-hidden="true">🛠️</span>
             <h3>Manutenção predial</h3>
-            <p>Serviços corretivos e preventivos para conservação de estruturas.</p>
-          </div>
+            <p>
+              Serviços corretivos e preventivos para conservação de
+              estruturas.
+            </p>
+          </article>
 
-          <div class="card">
-            <span class="icone">🎨</span>
+          <article class="card">
+            <span class="icone" aria-hidden="true">🎨</span>
             <h3>Pintura e acabamento</h3>
-            <p>Pintura interna e externa, emassamento, texturas e acabamentos.</p>
-          </div>
+            <p>
+              Pintura interna e externa, emassamento, texturas e acabamentos.
+            </p>
+          </article>
 
-          <div class="card">
-            <span class="icone">🚿</span>
+          <article class="card">
+            <span class="icone" aria-hidden="true">🚿</span>
             <h3>Instalações hidrossanitárias</h3>
-            <p>Execução e manutenção de redes hidráulicas e sanitárias.</p>
-          </div>
+            <p>
+              Execução e manutenção de redes hidráulicas e sanitárias.
+            </p>
+          </article>
 
-          <div class="card">
-            <span class="icone">⚡</span>
+          <article class="card">
+            <span class="icone" aria-hidden="true">⚡</span>
             <h3>Instalações elétricas</h3>
-            <p>Adequações, infraestrutura elétrica e manutenção de instalações.</p>
-          </div>
+            <p>
+              Adequações, infraestrutura elétrica e manutenção de instalações.
+            </p>
+          </article>
 
-          <div class="card">
-            <span class="icone">🔥</span>
+          <article class="card">
+            <span class="icone" aria-hidden="true">🔥</span>
             <h3>Combate a incêndio</h3>
-            <p>Tubulações de hidrantes, sprinklers e adequações de sistemas.</p>
-          </div>
+            <p>
+              Tubulações de hidrantes, sprinklers e adequações de sistemas.
+            </p>
+          </article>
 
         </div>
+
       </div>
     </section>
+
+    <!-- DIFERENCIAIS -->
 
     <section id="diferenciais" class="secao">
       <div class="container">
 
         <p class="subtitulo centralizado">Por que escolher a FZ</p>
+
         <h2 class="centralizado">Nossos diferenciais</h2>
 
         <div class="diferenciais">
 
-          <div>
+          <article>
             <strong>01</strong>
             <h3>Organização</h3>
-            <p>Controle de etapas, documentação, medições e acompanhamento dos serviços.</p>
-          </div>
+            <p>
+              Controle de etapas, documentação, medições e acompanhamento dos
+              serviços.
+            </p>
+          </article>
 
-          <div>
+          <article>
             <strong>02</strong>
             <h3>Responsabilidade técnica</h3>
-            <p>Execução com atenção às normas, segurança e qualidade dos serviços.</p>
-          </div>
+            <p>
+              Execução com atenção às normas, segurança e qualidade dos
+              serviços.
+            </p>
+          </article>
 
-          <div>
+          <article>
             <strong>03</strong>
             <h3>Experiência</h3>
-            <p>Atuação em contratos públicos, privados, reformas e manutenção predial.</p>
-          </div>
+            <p>
+              Atuação em contratos públicos, privados, reformas e manutenção
+              predial.
+            </p>
+          </article>
 
-          <div>
+          <article>
             <strong>04</strong>
             <h3>Compromisso</h3>
-            <p>Foco em prazos, atendimento, produtividade e entrega de resultados.</p>
-          </div>
+            <p>
+              Foco em prazos, atendimento, produtividade e entrega de
+              resultados.
+            </p>
+          </article>
 
         </div>
+
       </div>
     </section>
+
+    <!-- PARCEIROS -->
 
     <section id="parceiros" class="secao secao-cinza">
       <div class="container">
 
         <p class="subtitulo centralizado">Clientes e parceiros</p>
-        <h2 class="centralizado">Empresas e instituições que confiam na FZ</h2>
+
+        <h2 class="centralizado">
+          Empresas e instituições que confiam na FZ
+        </h2>
 
         <p class="texto-central">
-          Atuamos junto a empresas e instituições de referência, entregando soluções
-          em obras, reformas e manutenção predial.
+          Atuamos junto a empresas e instituições de referência, entregando
+          soluções em obras, reformas e manutenção predial.
         </p>
 
         <div class="parceiros-grid">
 
           <div class="parceiro parceiro-logo">
-            <img src="assets/caixa.png" alt="" class="logo-parceiro">
+            <img
+              src="assets/caixa.png"
+              alt="Caixa Econômica Federal"
+              class="logo-parceiro"
+            >
           </div>
 
           <div class="parceiro parceiro-logo">
-            <img src="assets/fiec.png" alt="" class="logo-parceiro">
+            <img
+              src="assets/fiec.png"
+              alt="FIEC"
+              class="logo-parceiro"
+            >
           </div>
 
           <div class="parceiro parceiro-logo">
-            <img src="assets/sesi.png" alt="" class="logo-parceiro">
+            <img
+              src="assets/sesi.png"
+              alt="SESI"
+              class="logo-parceiro"
+            >
           </div>
 
           <div class="parceiro parceiro-logo">
-            <img src="assets/senai.png" alt="" class="logo-parceiro">
+            <img
+              src="assets/senai.png"
+              alt="SENAI"
+              class="logo-parceiro"
+            >
           </div>
 
           <div class="parceiro parceiro-logo">
-            <img src="assets/isgh.png" alt="" class="logo-parceiro">
+            <img
+              src="assets/isgh.png"
+              alt="ISGH"
+              class="logo-parceiro"
+            >
           </div>
 
           <div class="parceiro parceiro-logo">
-            <img src="assets/monte-clinico.png" alt="" class="logo-parceiro">
+            <img
+              src="assets/monte-clinico.png"
+              alt="Grupo Monte Clínico"
+              class="logo-parceiro"
+            >
           </div>
 
           <div class="parceiro parceiro-logo">
-            <img src="assets/campac.png" alt="" class="logo-parceiro">
+            <img
+              src="assets/campac.png"
+              alt="Campac"
+              class="logo-parceiro"
+            >
           </div>
 
         </div>
@@ -223,11 +328,16 @@
       </div>
     </section>
 
+    <!-- EQUIPE -->
+
     <section id="equipe" class="secao">
       <div class="container">
 
         <p class="subtitulo centralizado">Nossa equipe</p>
-        <h2 class="centralizado">Gestão, administração e execução</h2>
+
+        <h2 class="centralizado">
+          Gestão, administração e execução
+        </h2>
 
         <p class="texto-central">
           A FZ Construções conta com uma equipe organizada para atuar desde o
@@ -236,78 +346,120 @@
 
         <div class="equipe-grid">
 
-          <div class="equipe-card">
-            <div class="foto-placeholder">Foto gerenciamento</div>
+          <article class="equipe-card">
+            <div class="foto-placeholder">
+              Foto gerenciamento
+            </div>
+
             <h3>Gerenciamento</h3>
-            <p>Planejamento, contratos, medições, cronogramas e acompanhamento técnico.</p>
-          </div>
 
-          <div class="equipe-card">
-            <div class="foto-placeholder">Foto administrativo</div>
+            <p>
+              Planejamento, contratos, medições, cronogramas e acompanhamento
+              técnico.
+            </p>
+          </article>
+
+          <article class="equipe-card">
+            <div class="foto-placeholder">
+              Foto administrativo
+            </div>
+
             <h3>Administrativo</h3>
-            <p>Documentação, financeiro, controle interno e suporte às obras.</p>
-          </div>
 
-          <div class="equipe-card">
-            <div class="foto-placeholder">Foto equipe de obra</div>
+            <p>
+              Documentação, financeiro, controle interno e suporte às obras.
+            </p>
+          </article>
+
+          <article class="equipe-card">
+            <div class="foto-placeholder">
+              Foto equipe de obra
+            </div>
+
             <h3>Equipe de obra</h3>
-            <p>Execução dos serviços com segurança, qualidade e produtividade.</p>
-          </div>
+
+            <p>
+              Execução dos serviços com segurança, qualidade e produtividade.
+            </p>
+          </article>
 
         </div>
+
       </div>
     </section>
+
+    <!-- PORTFÓLIO -->
 
     <section id="portfolio" class="secao secao-cinza">
       <div class="container">
 
         <p class="subtitulo centralizado">Portfólio</p>
-        <h2 class="centralizado">Obras e serviços realizados</h2>
+
+        <h2 class="centralizado">
+          Obras e serviços realizados
+        </h2>
 
         <p class="texto-central">
-          Conheça alguns registros de obras, reformas, manutenções e serviços executados pela FZ Construções.
+          Conheça alguns registros de obras, reformas, manutenções e serviços
+          executados pela FZ Construções.
         </p>
 
-        <div class="galeria-obras">
+        <div
+          class="carrossel-obras"
+          aria-label="Galeria de obras da FZ Construções"
+        >
 
-          <button class="obra-card" type="button"><img src="assets/obras/obra-01.jpeg" alt="Obra FZ Construções 01"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-02.jpeg" alt="Obra FZ Construções 02"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-03.jpeg" alt="Obra FZ Construções 03"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-04.jpeg" alt="Obra FZ Construções 04"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-05.jpeg" alt="Obra FZ Construções 05"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-06.jpeg" alt="Obra FZ Construções 06"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-07.jpeg" alt="Obra FZ Construções 07"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-08.jpeg" alt="Obra FZ Construções 08"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-09.jpeg" alt="Obra FZ Construções 09"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-10.jpeg" alt="Obra FZ Construções 10"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-11.jpeg" alt="Obra FZ Construções 11"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-12.jpeg" alt="Obra FZ Construções 12"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-13.jpeg" alt="Obra FZ Construções 13"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-14.jpeg" alt="Obra FZ Construções 14"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-15.jpeg" alt="Obra FZ Construções 15"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-16.jpeg" alt="Obra FZ Construções 16"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-17.jpeg" alt="Obra FZ Construções 17"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-18.jpeg" alt="Obra FZ Construções 18"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-19.jpeg" alt="Obra FZ Construções 19"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-20.jpeg" alt="Obra FZ Construções 20"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-21.jpeg" alt="Obra FZ Construções 21"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-22.jpeg" alt="Obra FZ Construções 22"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-23.jpeg" alt="Obra FZ Construções 23"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-24.jpeg" alt="Obra FZ Construções 24"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-25.jpeg" alt="Obra FZ Construções 25"></button>
-          <button class="obra-card" type="button"><img src="assets/obras/obra-26.jpeg" alt="Obra FZ Construções 26"></button>
+          <button
+            class="carrossel-btn carrossel-anterior"
+            id="carrosselAnterior"
+            type="button"
+            aria-label="Mostrar imagem anterior"
+          >
+            ‹
+          </button>
+
+          <div class="carrossel-frame">
+
+            <img
+              id="imagemObraAtual"
+              src="assets/obras/obra-01.jpeg"
+              alt="Obra FZ Construções 01"
+            >
+
+          </div>
+
+          <button
+            class="carrossel-btn carrossel-proxima"
+            id="carrosselProxima"
+            type="button"
+            aria-label="Mostrar próxima imagem"
+          >
+            ›
+          </button>
+
+        </div>
+
+        <div class="carrossel-info">
+
+          <span id="contadorObras" aria-live="polite">
+            1 / 26
+          </span>
 
         </div>
 
       </div>
     </section>
+
+    <!-- CONTATO -->
 
     <section id="contato" class="secao contato">
       <div class="container grid-2">
 
         <div>
           <p class="subtitulo">Contato</p>
+
           <h2>Fale com a FZ Construções</h2>
+
           <p>
             Entre em contato para solicitar orçamento, apresentar uma demanda
             ou conhecer melhor nossos serviços.
@@ -315,13 +467,31 @@
         </div>
 
         <div class="contato-card">
-          <p><strong>WhatsApp:</strong> +55 85 9644-9174</p>
-          <p><strong>Localização:</strong> Fortaleza - CE</p>
-          <p><strong>Atuação:</strong> Ceará e demais regiões conforme contrato</p>
 
-          <a class="btn btn-principal btn-whatsapp" href="https://wa.me/558596449174" target="_blank">
+          <p>
+            <strong>WhatsApp:</strong>
+            +55 85 9644-9174
+          </p>
+
+          <p>
+            <strong>Localização:</strong>
+            Fortaleza - CE
+          </p>
+
+          <p>
+            <strong>Atuação:</strong>
+            Ceará e demais regiões conforme contrato
+          </p>
+
+          <a
+            class="btn btn-principal btn-whatsapp"
+            href="https://wa.me/558596449174"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Chamar no WhatsApp
           </a>
+
         </div>
 
       </div>
@@ -331,30 +501,23 @@
 
   <footer class="rodape">
     <div class="container">
-      <p>© 2026 FZ Construções LTDA. Todos os direitos reservados.</p>
+      <p>
+        © 2026 FZ Construções LTDA. Todos os direitos reservados.
+      </p>
     </div>
   </footer>
 
-  <a href="https://wa.me/558596449174" class="whatsapp-fixo" target="_blank" aria-label="WhatsApp">
+  <a
+    href="https://wa.me/558596449174"
+    class="whatsapp-fixo"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Abrir conversa no WhatsApp"
+  >
     WhatsApp
   </a>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-fechar" id="lightboxFechar" type="button" aria-label="Fechar imagem">×</button>
-
-    <button class="lightbox-seta lightbox-anterior" id="lightboxAnterior" type="button" aria-label="Imagem anterior">
-      ‹
-    </button>
-
-    <img src="" alt="Imagem ampliada da obra" id="lightboxImagem">
-
-    <button class="lightbox-seta lightbox-proxima" id="lightboxProxima" type="button" aria-label="Próxima imagem">
-      ›
-    </button>
-
-    <div class="lightbox-contador" id="lightboxContador">1 / 26</div>
-  </div>
-
   <script src="script.js"></script>
+
 </body>
 </html>
