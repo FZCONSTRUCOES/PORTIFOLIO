@@ -1,9 +1,18 @@
+"use strict";
+
+/* MENU RESPONSIVO */
+
 const menuBtn = document.getElementById("menuBtn");
 const menu = document.getElementById("menu");
 
 if (menuBtn && menu) {
   menuBtn.addEventListener("click", () => {
-    menu.classList.toggle("ativo");
+    const menuAberto = menu.classList.toggle("ativo");
+
+    menuBtn.setAttribute(
+      "aria-expanded",
+      String(menuAberto)
+    );
   });
 }
 
@@ -11,124 +20,231 @@ const linksMenu = document.querySelectorAll(".menu a");
 
 linksMenu.forEach((link) => {
   link.addEventListener("click", () => {
-    if (menu) {
-      menu.classList.remove("ativo");
+    if (!menu || !menuBtn) {
+      return;
     }
+
+    menu.classList.remove("ativo");
+    menuBtn.setAttribute("aria-expanded", "false");
   });
 });
 
-/* Esconde imagem quebrada dos parceiros para não aparecer texto */
+/* ESCONDE LOGOS QUE NÃO CARREGAREM */
+
 const logosParceiros = document.querySelectorAll(".logo-parceiro");
 
 logosParceiros.forEach((logo) => {
   logo.addEventListener("error", () => {
     logo.classList.add("erro-imagem");
-    logo.removeAttribute("alt");
   });
 });
 
-/* Galeria de obras com ampliação, setas e contador */
-const imagensObras = Array.from(document.querySelectorAll(".obra-card img"));
-const lightbox = document.getElementById("lightbox");
-const lightboxImagem = document.getElementById("lightboxImagem");
-const lightboxFechar = document.getElementById("lightboxFechar");
-const lightboxAnterior = document.getElementById("lightboxAnterior");
-const lightboxProxima = document.getElementById("lightboxProxima");
-const lightboxContador = document.getElementById("lightboxContador");
+/* CARROSSEL DE OBRAS */
 
-let indiceAtual = 0;
+const imagensObras = [
+  "assets/obras/obra-01.jpeg",
+  "assets/obras/obra-02.jpeg",
+  "assets/obras/obra-03.jpeg",
+  "assets/obras/obra-04.jpeg",
+  "assets/obras/obra-05.jpeg",
+  "assets/obras/obra-06.jpeg",
+  "assets/obras/obra-07.jpeg",
+  "assets/obras/obra-08.jpeg",
+  "assets/obras/obra-09.jpeg",
+  "assets/obras/obra-10.jpeg",
+  "assets/obras/obra-11.jpeg",
+  "assets/obras/obra-12.jpeg",
+  "assets/obras/obra-13.jpeg",
+  "assets/obras/obra-14.jpeg",
+  "assets/obras/obra-15.jpeg",
+  "assets/obras/obra-16.jpeg",
+  "assets/obras/obra-17.jpeg",
+  "assets/obras/obra-18.jpeg",
+  "assets/obras/obra-19.jpeg",
+  "assets/obras/obra-20.jpeg",
+  "assets/obras/obra-21.jpeg",
+  "assets/obras/obra-22.jpeg",
+  "assets/obras/obra-23.jpeg",
+  "assets/obras/obra-24.jpeg",
+  "assets/obras/obra-25.jpeg",
+  "assets/obras/obra-26.jpeg"
+];
 
-function atualizarLightbox() {
-  if (!lightboxImagem || imagensObras.length === 0) return;
+const imagemObraAtual =
+  document.getElementById("imagemObraAtual");
 
-  const imagemAtual = imagensObras[indiceAtual];
+const contadorObras =
+  document.getElementById("contadorObras");
 
-  lightboxImagem.src = imagemAtual.src;
-  lightboxImagem.alt = imagemAtual.alt || "Imagem ampliada da obra";
+const carrosselAnterior =
+  document.getElementById("carrosselAnterior");
 
-  if (lightboxContador) {
-    lightboxContador.textContent = `${indiceAtual + 1} / ${imagensObras.length}`;
+const carrosselProxima =
+  document.getElementById("carrosselProxima");
+
+const secaoPortfolio =
+  document.getElementById("portfolio");
+
+let indiceObraAtual = 0;
+let trocaEmAndamento = false;
+
+function criarTextoAlternativo(indice) {
+  const numero = String(indice + 1).padStart(2, "0");
+
+  return `Obra FZ Construções ${numero}`;
+}
+
+function atualizarContador() {
+  if (!contadorObras) {
+    return;
   }
+
+  contadorObras.textContent =
+    `${indiceObraAtual + 1} / ${imagensObras.length}`;
 }
 
-function abrirLightbox(indice) {
-  if (!lightbox || !lightboxImagem || imagensObras.length === 0) return;
+function trocarImagem(novoIndice) {
+  if (
+    !imagemObraAtual ||
+    imagensObras.length === 0 ||
+    trocaEmAndamento
+  ) {
+    return;
+  }
 
-  indiceAtual = indice;
-  atualizarLightbox();
+  trocaEmAndamento = true;
+  imagemObraAtual.classList.add("trocando");
 
-  lightbox.classList.add("ativo");
-  lightbox.setAttribute("aria-hidden", "false");
-  document.body.classList.add("sem-scroll");
+  window.setTimeout(() => {
+    indiceObraAtual = novoIndice;
+
+    imagemObraAtual.src =
+      imagensObras[indiceObraAtual];
+
+    imagemObraAtual.alt =
+      criarTextoAlternativo(indiceObraAtual);
+
+    atualizarContador();
+
+    imagemObraAtual.classList.remove("trocando");
+    trocaEmAndamento = false;
+  }, 180);
 }
 
-function fecharLightbox() {
-  if (!lightbox || !lightboxImagem) return;
+function mostrarAnterior() {
+  const novoIndice =
+    indiceObraAtual === 0
+      ? imagensObras.length - 1
+      : indiceObraAtual - 1;
 
-  lightbox.classList.remove("ativo");
-  lightbox.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("sem-scroll");
-  lightboxImagem.src = "";
+  trocarImagem(novoIndice);
 }
 
-function imagemAnterior() {
-  if (imagensObras.length === 0) return;
+function mostrarProxima() {
+  const novoIndice =
+    indiceObraAtual === imagensObras.length - 1
+      ? 0
+      : indiceObraAtual + 1;
 
-  indiceAtual = indiceAtual === 0 ? imagensObras.length - 1 : indiceAtual - 1;
-  atualizarLightbox();
+  trocarImagem(novoIndice);
 }
 
-function proximaImagem() {
-  if (imagensObras.length === 0) return;
-
-  indiceAtual = indiceAtual === imagensObras.length - 1 ? 0 : indiceAtual + 1;
-  atualizarLightbox();
+if (carrosselAnterior) {
+  carrosselAnterior.addEventListener(
+    "click",
+    mostrarAnterior
+  );
 }
 
-imagensObras.forEach((imagem, indice) => {
-  imagem.addEventListener("click", () => {
-    abrirLightbox(indice);
-  });
-});
-
-if (lightboxFechar) {
-  lightboxFechar.addEventListener("click", fecharLightbox);
+if (carrosselProxima) {
+  carrosselProxima.addEventListener(
+    "click",
+    mostrarProxima
+  );
 }
 
-if (lightboxAnterior) {
-  lightboxAnterior.addEventListener("click", (event) => {
-    event.stopPropagation();
-    imagemAnterior();
-  });
-}
-
-if (lightboxProxima) {
-  lightboxProxima.addEventListener("click", (event) => {
-    event.stopPropagation();
-    proximaImagem();
-  });
-}
-
-if (lightbox) {
-  lightbox.addEventListener("click", (event) => {
-    if (event.target === lightbox) {
-      fecharLightbox();
-    }
-  });
-}
+/* SETAS DO TECLADO FUNCIONAM QUANDO O PORTFÓLIO ESTÁ VISÍVEL */
 
 document.addEventListener("keydown", (event) => {
-  if (!lightbox || !lightbox.classList.contains("ativo")) return;
+  if (!secaoPortfolio) {
+    return;
+  }
 
-  if (event.key === "Escape") {
-    fecharLightbox();
+  const limites =
+    secaoPortfolio.getBoundingClientRect();
+
+  const portfolioVisivel =
+    limites.top < window.innerHeight &&
+    limites.bottom > 0;
+
+  if (!portfolioVisivel) {
+    return;
   }
 
   if (event.key === "ArrowLeft") {
-    imagemAnterior();
+    mostrarAnterior();
   }
 
   if (event.key === "ArrowRight") {
-    proximaImagem();
+    mostrarProxima();
   }
+});
+
+/* GESTOS LATERAIS NO CELULAR */
+
+let toqueInicialX = 0;
+let toqueFinalX = 0;
+
+if (imagemObraAtual) {
+  imagemObraAtual.addEventListener(
+    "touchstart",
+    (event) => {
+      toqueInicialX =
+        event.changedTouches[0].screenX;
+    },
+    {
+      passive: true
+    }
+  );
+
+  imagemObraAtual.addEventListener(
+    "touchend",
+    (event) => {
+      toqueFinalX =
+        event.changedTouches[0].screenX;
+
+      const distancia =
+        toqueFinalX - toqueInicialX;
+
+      const distanciaMinima = 45;
+
+      if (distancia > distanciaMinima) {
+        mostrarAnterior();
+      }
+
+      if (distancia < -distanciaMinima) {
+        mostrarProxima();
+      }
+    },
+    {
+      passive: true
+    }
+  );
+}
+
+/* PRÉ-CARREGA AS FOTOS PARA DEIXAR A TROCA MAIS RÁPIDA */
+
+imagensObras.forEach((caminhoImagem) => {
+  const imagem = new Image();
+  imagem.src = caminhoImagem;
+});
+
+/* INICIALIZAÇÃO */
+
+if (imagemObraAtual && imagensObras.length > 0) {
+  imagemObraAtual.src = imagensObras[0];
+  imagemObraAtual.alt = criarTextoAlternativo(0);
+}
+
+atualizarContador();
 });
